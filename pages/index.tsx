@@ -51,7 +51,7 @@ export default function Home() {
                   <ErrorMessage name="roundtrip"  />
                   </span>
                 </div>
-                <button type="submit" className={"mt-8 rounded-lg font-semibold px-3 py-1.5 ransition  " + (Object.keys(values.errors).length != 0 || values.values.from == "" ? "text-gray-700 bg-gray-200 " : "bg-purple-500 text-gray-100")}>Let's Go!</button>
+                <button type="submit" className={"mt-8 rounded-lg font-semibold px-3 py-1.5 ransition  " + (Object.keys(values.errors).length != 0 || values.values.from == "" ? "text-gray-700 bg-gray-200 " : "bg-purple-500 text-gray-100")}>Let&apos;s Go!</button>
               </Form>
             )}
           </Formik>
