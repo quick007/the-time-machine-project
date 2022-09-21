@@ -42,12 +42,25 @@ export default function Bookings() {
             </div>
           ) : (
             data.map((v, i) => (
-							<div className="rounded-xl bg-gray-100 shadow-lg px-6 py-4 flex justify-between items-center" key={i}>
-								<div>Departs from <span className="font-medium">{v.from}</span> and goes to <span className="font-medium">{v.to}</span></div>
-								<div className={`rounded-full px-2 border ${v.roundtrip ? "border-green-500 bg-green-200/50" : "border-red-500 bg-red-200/50"} text-sm`}>Roundtrip</div>
-            
-            </div>
-						))
+              <div
+                className="rounded-xl bg-gray-100 shadow-lg px-6 py-4 flex justify-between items-center"
+                key={i}
+              >
+                <div>
+                  Departs from <span className="font-medium">{v.from}</span> and
+                  goes to <span className="font-medium">{v.to}</span>
+                </div>
+                <div
+                  className={`rounded-full px-2 border ${
+                    v.roundtrip
+                      ? "border-green-500 bg-green-200/50"
+                      : "border-red-500 bg-red-200/50"
+                  } text-sm`}
+                >
+                  Roundtrip
+                </div>
+              </div>
+            ))
           )}
         </div>
       </div>

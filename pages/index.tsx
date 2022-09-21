@@ -22,15 +22,14 @@ export default function Home() {
             initialValues={{ from: "", to: "", roundtrip: true }}
             onSubmit={(v) => {
               const storage = JSON.parse(localStorage.getItem("bookings"));
-              console.log(storage)
+              console.log(storage);
               if (storage == null) {
                 localStorage.setItem("bookings", JSON.stringify([v]));
-                console.log(JSON.stringify([v]))
+                console.log(JSON.stringify([v]));
               } else {
-                const storageNew = storage.push(v)
+                const storageNew = storage.push(v);
                 localStorage.setItem("bookings", JSON.stringify(storage));
-                console.log(storage)
-                
+                console.log(storage);
               }
 
               router.push("/bookings");
