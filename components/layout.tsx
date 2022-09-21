@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Layout(props: {
   children: ReactNode;
-  page?: "about";
+  page?: "about" | "bookings";
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <nav className="z-40 flex h-14 top-0 sticky items-center justify-between bg-gray-300/50  px-8   ring-gray-500/20 backdrop-blur-lg backdrop-filter">
+      <nav className="z-40 flex h-14 top-0 text-gray-900 sticky items-center justify-between bg-gray-300/50  px-8   ring-gray-500/20 backdrop-blur-lg backdrop-filter">
         <Link href="/">
           <a className="flex items-center font-medium text-lg">
             <svg
@@ -29,15 +29,55 @@ export default function Layout(props: {
         </Link>
         <div className="flex space-x-8">
           <Link href="/about">
-            <a className={"flex items-center font-medium " + (props.page == "about" ? "text-purple-600" : "text-gray-600")} >Artists Statement</a>
+            <a
+              className={
+                "flex items-center font-medium transition " +
+                (props.page == "about" ? "text-purple-600" : "text-gray-600 hover:text-gray-800")
+              }
+            >
+              Artist&apos;s Statement
+            </a>
           </Link>
-					<Link href="/bookings">
-            <a className={"flex items-center font-medium " + (props.page == "about" ? "text-purple-600" : "text-gray-600")} >Bookings</a>
+          <Link href="/bookings">
+            <a
+              className={
+                "flex items-center font-medium transition " +
+                (props.page == "bookings" ? "text-purple-600" : "text-gray-600 hover:text-gray-800")
+              }
+            >
+              Bookings
+            </a>
           </Link>
         </div>
       </nav>
       <div className="flex-1">{props.children}</div>
-      <div className="">foo</div>
+      <div className="flex text-gray-900">
+        <div className="mx-auto w-full max-w-screen-md pb-10 pt-5 mt-10 flex justify-between border-t border-gray-500">
+          <div>
+            <h3 className="font-medium">4D Travel</h3>
+            <p className="text-sm max-w-xs mt-1 text-gray-800 leading-6">
+              {" "}
+              Traversing the world in 4D, rather than 3D, letting humans think
+              about the 4th dimension in realistic terms. Doesn&apos;t support
+              mobile.
+            </p>
+            <p className="mt-6 font-medium text-sm">Made by Lukas</p>
+          </div>
+          <div className="flex flex-col justify-end">
+            <a
+              href="https://github.com/quick007/the-time-machine-project"
+              className=" underline decoration-zinc-600 dashed text-right"
+            >
+              Github
+            </a>
+            <Link href="/about">
+              <a className=" underline decoration-zinc-600">
+                Artist&apos;s Statement
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
